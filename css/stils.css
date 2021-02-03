@@ -7,39 +7,163 @@ and open the template in the editor.
     Created on : Jan 11, 2021, 12:28:08 PM
     Author     : Markuss
 */
-* {
-  box-sizing: border-box;
+body {
+    font: 20px Montserrat, sans-serif;
+    line-height: 1.8;
+    color: #f5f6f7;
 }
-.menu {
-  float:left;
-  width:20%;
-  text-align:center;
+p {font-size: 16px;}
+.margin {margin-bottom: 45px;}
+.bg-1 { 
+    background-color: #1abc9c; /* Green */
+    color: #ffffff;
 }
-.menu a {
-  background-color:#e5e5e5;
-  padding:8px;
-  margin-top:7px;
-  display:block;
-  width:100%;
-  color:black;
+.bg-2 { 
+    background-color: #474e5d; /* Dark Blue */
+    color: #ffffff;
 }
-.main {
-  float:left;
-  width:60%;
-  padding:0 20px;
+.bg-3 { 
+    background-color: #ffffff; /* White */
+    color: #555555;
 }
-.right {
-  background-color:#e5e5e5;
-  float:left;
-  width:20%;
-  padding:15px;
-  margin-top:7px;
-  text-align:center;
+.bg-4 { 
+    background-color: #2f2f2f; /* Black Gray */
+    color: #fff;
+}
+.container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+.navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+}
+.navbar-nav  li a:hover {
+    color: #1abc9c !important;
 }
 
-@media only screen and (max-width:620px) {
-  /* For mobile phones: */
-  .menu, .main, .right {
-    width:100%;
-  }
+h2{
+    font: 30px Montserrat, sans-serif;
+}
+
+.padding-sides{
+    padding-left: 100px;
+    padding-right: 100px;
+    text-align: center;
+}
+
+.typewriter {
+    font: 30px Montserrat, sans-serif;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .1em; /* Adjust as needed */
+    -webkit-animation: 
+        typing 3.5s steps(30, end),
+        blink-caret .35s;
+    animation: 
+        typing 3.5s steps(30, end),
+        blink-caret .35s;
+}
+
+/* The typing effect */
+@-webkit-keyframes typing {
+    from { width: 0 }
+    to { width: 57% }
+}
+@keyframes typing {
+    from { width: 0 }
+    to { width: 57% }
+}
+
+/* The typewriter cursor effect */
+@-webkit-keyframes blink-caret {
+    from, to { border-color: transparent }
+    57% { border-color: orange; }
+}
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    57% { border-color: orange; }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.top-link {
+    transition: all .25s ease-in-out;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    display: inline-flex;
+
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    margin: 0 3em 3em 0;
+    border-radius: 50%;
+    padding: .25em;
+    width: 80px;
+    height: 80px;
+    background-color: #F8F8F8;
+
+    &.show {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    &.hide {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    svg {
+        fill: #000;
+        width: 24px;
+        height: 12px;
+    }
+
+    &:hover {
+        background-color: #E8E8E8;
+
+        svg {
+            fill: #000000;
+        }
+    }
+}
+
+.screen-reader-text {
+    position: absolute;
+    clip-path: inset(50%);
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    word-wrap: normal !important;
+    clip: rect(1px, 1px, 1px, 1px);
+
+    &:focus {
+        display: block;
+        top: 5px;
+        left: 5px;
+        z-index: 100000;
+        clip-path: none;
+        background-color: #eee;
+        padding: 15px 23px 14px;
+        width: auto;
+        height: auto;
+        text-decoration: none;
+        line-height: normal;
+        color: #444;
+        font-size: 1em;
+        clip: auto !important;
+    }
 }
