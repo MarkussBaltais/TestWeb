@@ -4,6 +4,18 @@
  * and open the template in the editor.
  */
 
+// When the user scrolls the page, execute myFunction
+setTimeout(() => {
+    let navbar = document.getElementById("myNavbar");
+    let sticky = navbar.offsetHeight;
+    window.onscroll = () => {
+        if (window.pageYOffset >= sticky)
+            navbar.classList.add("sticky");
+        else
+            navbar.classList.remove("sticky");
+    }
+}, 0);
+
 // Set a variable for our button element.
 const scrollToTopButton = document.getElementById('js-top');
 
