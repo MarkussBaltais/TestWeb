@@ -21,8 +21,7 @@
         </a>
 
     <!-- Navbar -->
-    <div id="myNavbar">
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default" id="myNavbar">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -41,7 +40,6 @@
             </div>
         </div>
     </nav>
-    </div>
     
  
 <div class="content">
@@ -102,16 +100,14 @@
 </script>
 
 <script>
-window.onload = () => {
-    let navbar = document.getElementById("myNavbar");
-    let sticky = navbar.offsetHeight;
     window.onscroll = () => {
+            let navbar = document.getElementById("myNavbar");
+    let sticky = navbar.offsetHeight;
         if (window.pageYOffset >= sticky)
             navbar.classList.add("sticky");
         else
             navbar.classList.remove("sticky");
     }
-    };
 </script>
     
 </body>
