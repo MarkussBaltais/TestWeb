@@ -87,12 +87,13 @@
         </div>
     </div>
 </div>
-    </div>
+
 
 <!-- Footer -->
 <footer class="container-fluid bg-4 text-center">
     <p>Bootstrap Theme Made By <a href="https://www.w3schools.com">www.w3schools.com</a></p> 
 </footer>
+    </div>
 
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
@@ -102,7 +103,8 @@
 <script>
     window.onscroll = () => {
             let navbar = document.getElementById("myNavbar");
-    let sticky = navbar.offsetHeight;
+    let sticky = navbar.offsetTop;
+    document.console.log(sticky);
         if (window.pageYOffset >= sticky)
             navbar.classList.add("sticky");
         else
