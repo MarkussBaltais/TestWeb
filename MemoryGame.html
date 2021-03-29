@@ -6,87 +6,52 @@ and open the template in the editor.
 -->
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Atmiņas spēle</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-    <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Raleway">
-    <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Permanent+Marker" >
-    <link rel="stylesheet" href="css/game_style.css">
-</head>
-<body>
+    <head>
+        <meta charset="utf-8">
+        <title>Atmiņas spēle</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+        <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Raleway">
+        <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Permanent+Marker" >
+        <link rel="stylesheet" href="css/game_style.css">
+    </head>
+    <body>
 
-    <div class="container">
-        <header>
-            <h1>Atmiņas spēle</h1>
-        </header>
+        <div class="container">
+            <header>
+                <h1>Atmiņas spēle</h1>
+            </header>
 
-        <section class="score-panel">
+            <section class="score-panel" id="panel">
+                
+                <input type="number" min="2" max="16" step="1" placeholder="Kāršu pāri" style="width: 120px" required="required" id="numberOfCards"> <button id="submit" onclick="startGame();">Sākt</button>
 
-        	<span class="moves">0</span> gājieni
+                <span class="moves" style="padding-left: 50px">0</span> gājieni <div class="timer"> </div> <div class="restart" onclick=startGame()> <i class="fa fa-repeat"></i> </div>
+                 
+            </section>
 
-            <div class="timer">
+            <div id="cardsID" class="deck"> 
             </div>
+            
+            <div id="popup1" class="overlay">
+                <div class="popup">
+                    <h2>Apsveicam!</h2>
+                    <a class="close" href=# >×</a>
+                    <div class="content-1">
+                        🎉 Jūs esat uzvarējis! 🎉
+                    </div>
+                    <div class="content-2">
+                        <p>Jūsu laiks: <span id=totalTime> </span> </p>
+                    </div>
+<!--                    <button id="play-aga 
+                    </button> -->
+                </div>
+            </div>
+        
+            
+            <script src="js/game_js.js"></script>
 
-            <div class="restart" onclick=startGame()>
-        		<i class="fa fa-repeat"></i>
-        	</div>
-        </section>
 
-        <ul class="deck" id="card-deck">
-            <li class="card" type="dropbox">
-                <i class="fa fa-dropbox"></i>
-            </li>
-            <li class="card" type="amazon">
-                <i class="fa fa-amazon"></i>
-            </li>
-            <li class="card" type="bitcoin">
-                <i class="fa fa-bitcoin"></i>
-            </li>
-            <li class="card" type="apple" >
-                <i class="fa fa-apple"></i>
-            </li>
-            <li class="card" type="facebook">
-                <i class="fa fa-facebook"></i>
-            </li>
-            <li class="card" type="bitcoin">
-                <i class="fa fa-bitcoin"></i>
-            </li>
-            <li class="card" type="spotify">
-                <i class="fa fa-spotify"></i>
-            </li>
-            <li class="card" type="twitter">
-                <i class="fa fa-twitter"></i>
-            </li>
-            <li class="card" type="dropbox">
-                <i class="fa fa-dropbox"></i>
-            </li>
-            <li class="card" type="whatsapp">
-                <i class="fa fa-whatsapp"></i>
-            </li>
-            <li class="card" type="spotify">
-                <i class="fa fa-spotify"></i>
-            </li>
-            <li class="card" type="whatsapp">
-                <i class="fa fa-whatsapp"></i>
-            </li>
-            <li class="card" type="apple">
-                <i class="fa fa-apple"></i>
-            </li>
-            <li class="card" type="twitter">
-                <i class="fa fa-twitter"></i>
-            </li>
-            <li class="card" type="amazon">
-                <i class="fa fa-amazon"></i>
-            </li>
-            <li class="card" type="facebook">
-                <i class="fa fa-facebook"></i>
-            </li>
-        </ul>
-
-    </div>
-    <script src="js/game_js.js"></script>
-</body>
+    </body>
 </html>
