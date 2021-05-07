@@ -15,8 +15,25 @@ and open the template in the editor.
         <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Raleway">
         <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Permanent+Marker" >
         <link rel="stylesheet" href="css/game_style.css">
+        
+        <script>
+            var author = "Markuss";
+            var punkti = 10;
+            function fetchResults(){
+                var dict = {author: author, punkti: punkti};
+                console.log(JSON.stringify(dict));
+                fetch('http://markussbaltais.pythonanywhere.com/results', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(dict)
+                })
+                        .then(results => results.json())
+                        .then(data => document.getElementById("top").innerHTML =
+                        "Labākais rezultāts: " + data[0].punkti + " punkti " + data[0].author);
+            }
+        </script>   
     </head>
-    <body>
+    <body onload="fetchResults()">
 
         <div class="container">
             <header>
